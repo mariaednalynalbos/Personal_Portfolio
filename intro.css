@@ -249,8 +249,27 @@
 
 @media (max-width: 680px) {
   .intro-platform { width: 82vw; height: 46px; bottom: calc(50% - 168px); }
-  .intro-robot { scale: .76; }
+  .intro-robot {
+    left: 50vw;
+    transform: translateX(-50%);
+    transform-origin: center center;
+    scale: .76;
+    animation-name: robot-walk-in-mobile;
+  }
+  .intro-robot.is-walking-out { animation-name: robot-walk-out-mobile; }
   .intro-skip { top: 14px; right: 14px; }
+
+  @keyframes robot-walk-in-mobile {
+    0% { transform: translateX(calc(-50% - 60vw)) rotate(-7deg); }
+    70% { transform: translateX(calc(-50% + 8px)) rotate(3deg); }
+    100% { transform: translateX(-50%) rotate(0); }
+  }
+
+  @keyframes robot-walk-out-mobile {
+    0% { transform: translateX(-50%) rotate(0); }
+    25% { transform: translateX(calc(-50% - 8px)) rotate(-5deg); }
+    100% { transform: translateX(calc(-50% + 70vw)) rotate(8deg); }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

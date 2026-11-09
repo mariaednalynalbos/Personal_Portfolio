@@ -1730,7 +1730,15 @@ h1 {
   .photo-frame::before { inset: 18% 8% 0; border-radius: 24px; }
   .badge-three { display: none; }
 
-  .hero-bg-text { font-size: 40vw; }
+  .hero-bg-text {
+    left: 0;
+    right: 0;
+    width: 100vw;
+    text-align: center;
+    transform: translateY(-50%);
+    font-size: clamp(150px, 40vw, 260px);
+    letter-spacing: -.06em;
+  }
 
   h1 { font-size: clamp(22px, 7.5vw, 42px); letter-spacing: -2.5px; }
 

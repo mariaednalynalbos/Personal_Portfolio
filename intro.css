@@ -250,25 +250,33 @@
 @media (max-width: 680px) {
   .intro-platform { width: 82vw; height: 46px; bottom: calc(50% - 168px); }
   .intro-robot {
-    left: 50vw;
-    transform: translateX(-50%);
+    left: 50%;
+    margin-left: -125px;
     transform-origin: center center;
     scale: .76;
     animation-name: robot-walk-in-mobile;
   }
   .intro-robot.is-walking-out { animation-name: robot-walk-out-mobile; }
   .intro-skip { top: 14px; right: 14px; }
+  .intro-type-area {
+    left: 0;
+    width: 100%;
+    padding-inline: 12px;
+    transform: translateY(-50%);
+  }
+  .intro-logo-line { font-size: clamp(56px, 14vw, 76px); letter-spacing: -4px; }
+  .intro-name-line { font-size: clamp(16px, 4.2vw, 23px); letter-spacing: clamp(1px, .25vw, 2px); }
 
   @keyframes robot-walk-in-mobile {
-    0% { transform: translateX(calc(-50% - 60vw)) rotate(-7deg); }
-    70% { transform: translateX(calc(-50% + 8px)) rotate(3deg); }
-    100% { transform: translateX(-50%) rotate(0); }
+    0% { transform: translateX(-60vw) rotate(-7deg); }
+    70% { transform: translateX(8px) rotate(3deg); }
+    100% { transform: translateX(0) rotate(0); }
   }
 
   @keyframes robot-walk-out-mobile {
-    0% { transform: translateX(-50%) rotate(0); }
-    25% { transform: translateX(calc(-50% - 8px)) rotate(-5deg); }
-    100% { transform: translateX(calc(-50% + 70vw)) rotate(8deg); }
+    0% { transform: translateX(0) rotate(0); }
+    25% { transform: translateX(-8px) rotate(-5deg); }
+    100% { transform: translateX(70vw) rotate(8deg); }
   }
 }
 

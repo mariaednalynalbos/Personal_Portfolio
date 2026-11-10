@@ -236,6 +236,7 @@ main,
 .nav-cta span { margin-left: 4px; }
 
 .menu-toggle { display: none; }
+.mobile-bottom-nav { display: none; }
 
 /* ============================================================
    REVEAL ANIMATION
@@ -1841,7 +1842,7 @@ h1 {
   }
 
   .nav {
-    max-height: calc(100dvh - 68px);
+    max-height: calc(100dvh - 68px - 68px);
     overflow-y: auto;
     overscroll-behavior: contain;
     padding-bottom: max(26px, env(safe-area-inset-bottom));
@@ -1858,6 +1859,57 @@ h1 {
   .contact-detail { min-width: 0; }
   .contact-social { flex: 0 0 46px; }
   .project-art img { object-fit: contain; }
+
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  html { scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+
+  .mobile-bottom-nav {
+    position: fixed;
+    z-index: 60;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+    padding: 5px 8px calc(5px + env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(117, 161, 255, .2);
+    background: rgba(8, 13, 26, .96);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, .22);
+    backdrop-filter: blur(22px);
+  }
+
+  .mobile-tab {
+    min-width: 0;
+    min-height: 48px;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 2px;
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1.15;
+    transition: color .2s, background .2s;
+  }
+
+  .mobile-tab svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .mobile-tab.active,
+  .mobile-tab:hover,
+  .mobile-tab:focus-visible {
+    color: var(--accent-bright);
+    background: rgba(59, 130, 246, .1);
+  }
 }
 
 @media (max-width: 380px) {

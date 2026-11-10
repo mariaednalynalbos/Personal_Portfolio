@@ -48,7 +48,7 @@ if ("IntersectionObserver" in window) {
 
 // Active nav link
 const sections = [...document.querySelectorAll("main section[id]")];
-const navLinks = [...document.querySelectorAll(".nav-link")];
+const navLinks = [...document.querySelectorAll(".nav-link, .mobile-tab")];
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

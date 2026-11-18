@@ -169,7 +169,7 @@ document.addEventListener("keydown", event => {
   if (event.key === "ArrowLeft") lbShow((lbIndex - 1 + lbImages.length) % lbImages.length);
   if (event.key === "ArrowRight") lbShow((lbIndex + 1) % lbImages.length);
 });
-// Prepare contact form message in the visitor's email app
+// Open a Gmail compose draft with the contact form details
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
   contactForm.addEventListener("submit", event => {
@@ -177,7 +177,8 @@ if (contactForm) {
     const fields = new FormData(contactForm);
     const subject = encodeURIComponent(fields.get("subject") || "Portfolio inquiry");
     const body = encodeURIComponent(`Name: ${fields.get("name")}\nEmail: ${fields.get("email")}\n\n${fields.get("message")}`);
-    window.location.href = `mailto:mariaednalynalbos@gmail.com?subject=${subject}&body=${body}`;
+    const recipient = encodeURIComponent("mariaednalynalbos@gmail.com");
+    window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
   });
 }
 // Biliran map modal

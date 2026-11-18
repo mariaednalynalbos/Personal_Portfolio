@@ -34,6 +34,7 @@ body {
   font-family: var(--font);
   line-height: 1.65;
   overflow-x: hidden;
+  padding-top: 72px;
 }
 
 body::before {
@@ -160,8 +161,11 @@ main,
    HEADER
 ============================================================ */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 50;
   height: 72px;
   display: flex;
@@ -1860,7 +1864,7 @@ h1 {
   .contact-social { flex: 0 0 46px; }
   .project-art img { object-fit: contain; }
 
-  body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  body { padding-top: 68px; padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
   html { scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
 
   .mobile-bottom-nav {
